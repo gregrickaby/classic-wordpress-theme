@@ -1,6 +1,6 @@
 {
   "name": "gregrickaby/classic-wordpress-theme",
-  "description": "https://github.com/gregrickaby/classic-wordpress-theme",
+  "description": "A classic PHP-based theme, with modern tooling and support for Gutenberg blocks.",
   "type": "wordpress-theme",
   "license": "GPL-2.0-or-later",
   "authors": [

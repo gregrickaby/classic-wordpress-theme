@@ -28,6 +28,7 @@
     "lint:css": "npx stylelint '**/*.{css,scss}'",
     "lint:js": "npx eslint '**/*.{js,ts}'",
     "lint:md": "npx markdownlint-cli '**/*.md'",
+    "lint:php": "composer run-script lint",
     "start": "npm run dev"
   },
   "devDependencies": {

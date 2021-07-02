@@ -1,6 +1,6 @@
 # Classic WordPress Theme <!-- omit in toc -->
 
-A "classic" PHP-based theme, with modern tooling and support for Gutenberg blocks.
+A classic PHP-based theme, with modern tooling and support for Gutenberg blocks.
 
 ## Table of Contents <!-- omit in toc -->
 
