@@ -102,7 +102,7 @@ To get started, open `index.css` and start adding your styles. To customize furt
 
 ### JavaScript
 
-This theme uses Webpack 5 is ready for anything `esnext`. Simply create your JS files and place them in `/src/js/` then use ES6 imports in `src/index.js`.
+This theme uses Webpack 5 and Babel and is ready for anything `esnext`. Simply create your JS files and place them in `/src/js/` then use ES6 imports in `src/index.js`.
 
 ### Theme Files
 
