@@ -1,0 +1,31 @@
+{
+  "name": "gregrickaby/classic-wordpress-theme",
+  "description": "https://github.com/gregrickaby/classic-wordpress-theme",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Greg Rickaby",
+      "email": "gregrickaby@gmail.com"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "composer/installers": "^1.11"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "wp-cli/wp-cli-bundle": "^2.5",
+    "wp-coding-standards/wpcs": "^2.3"
+  },
+  "scripts": {
+    "format": "./vendor/bin/phpcbf --report=summary,source",
+    "lint": "./vendor/bin/phpcs --report=summary,source",
+    "pot": "./vendor/bin/wp i18n make-pot . build/languages/classic.pot --exclude=node_modules,vendor,build --allow-root"
+  }
+}

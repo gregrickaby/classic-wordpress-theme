@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'),
+    url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  @apply bg-white;
+}
+
+.container {
+  @apply max-w-prose p-4 m-auto;
+}
+
+.site-title {
+  @apply text-3xl mb-4;
+}
+
+.entry-title {
+  @apply text-2xl mb-4;
+}
+
+.entry-content {
+  @apply mb-8;
+}
+
+p {
+  @apply mb-4;
+}
