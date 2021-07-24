@@ -16,6 +16,9 @@ A classic PHP-based theme, with modern tooling and support for Gutenberg blocks.
 	- [Theme Files](#theme-files)
 	- [theme.json](#themejson)
 	- [NPM Scripts](#npm-scripts)
+		- [Live Reload](#live-reload)
+		- [Going to Production](#going-to-production)
+		- [Linting](#linting)
 
 ---
 
@@ -49,6 +52,8 @@ I wanted to create a "classic" theme that gave developers world class support fo
 - [Node 14](https://nodejs.org/en/)
 - [NPM 7](https://docs.npmjs.com/about-npm)
 - [Composer 2](https://getcomposer.org/)
+- [LiveReload Browser Extension](http://livereload.com/extensions/)
+
 
 ### Install
 
@@ -139,19 +144,25 @@ You can learn more about `theme.json` in the [Block Editor Handbook](https://dev
 
 ### NPM Scripts
 
+#### Live Reload
+
 Watch for changes and LiveReload:
 
 ```bash
 npm run dev
 ```
 
-> Heads up! You'll need a [browser extension](http://livereload.com/extensions/) for LiveReload to work!
+Now open your browser and click the LiveReload extension.
+
+#### Going to Production
 
 Bundle assets for production:
 
 ```bash
 npm run build
 ```
+
+#### Linting
 
 Format files:
 
