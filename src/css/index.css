@@ -18,12 +18,41 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul,
+ol {
   @apply dark:text-white;
+}
+
+h1 {
+  @apply text-6xl;
+}
+
+h2 {
+  @apply text-5xl;
+}
+
+h3 {
+  @apply text-4xl;
+}
+
+h4 {
+  @apply text-3xl;
+}
+
+h5 {
+  @apply text-2xl;
 }
 
 ul {
   @apply list-disc pl-2 py-2;
+
+  & li {
+    @apply pb-2;
+  }
+}
+
+ol {
+  @apply list-decimal pl-2 py-2;
 
   & li {
     @apply pb-2;
@@ -86,4 +115,11 @@ p {
   & .wp-block-cover-text {
     @apply dark:text-white !important;
   }
+}
+
+.wp-block-latest-posts__post-date,
+.wp-block-latest-posts__post-author,
+.wp-block-image figcaption,
+.blocks-gallery-caption {
+  @apply dark:text-gray-500;
 }
