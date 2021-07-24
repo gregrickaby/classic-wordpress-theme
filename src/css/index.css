@@ -17,8 +17,17 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
   @apply dark:text-white;
+}
+
+ul {
+  @apply list-disc pl-2 py-2;
+
+  & li {
+    @apply pb-2;
+  }
 }
 
 .container {
@@ -39,4 +48,42 @@ p {
 
 p {
   @apply mb-4;
+}
+
+.wp-block-button {
+  & a {
+    @apply py-2 px-8 rounded-none;
+  }
+
+  &.aligncenter {
+    @apply text-center;
+  }
+
+  &.alignright {
+    @apply text-right;
+  }
+
+  &.is-style-outline {
+    @apply outline-black dark:outline-white;
+  }
+}
+
+.wp-block-cover {
+  &.alignfull {
+    @apply relative mb-12 p-48 leading-normal;
+
+    left: -25vw;
+    width: calc(100% + 50vw);
+  }
+
+  &.alignwide {
+    @apply relative mb-12;
+
+    left: -15vw;
+    width: calc(100% + 30vw);
+  }
+
+  & .wp-block-cover-text {
+    @apply dark:text-white !important;
+  }
 }
