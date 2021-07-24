@@ -3,7 +3,7 @@ module.exports = {
   purge: {
     content: ['./**/*.php', './src/js/*.js']
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     extend: {},
     fontFamily: {
