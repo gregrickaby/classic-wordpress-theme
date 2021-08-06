@@ -1,66 +1,125 @@
-@font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans'),
-    url('../fonts/OpenSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  @apply dark:bg-black;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol {
-  @apply dark:text-white;
-}
+  body {
+    @apply dark:bg-gray-900 antialiased;
+  }
 
-h1 {
-  @apply text-6xl;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol {
+    @apply dark:text-gray-200;
+  }
 
-h2 {
-  @apply text-5xl;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-gray-800 dark:text-gray-200 font-sans font-extrabold break-words mb-8;
+  }
 
-h3 {
-  @apply text-4xl;
-}
+  h1 {
+    @apply text-5xl lg:text-6xl;
+  }
 
-h4 {
-  @apply text-3xl;
-}
+  h2 {
+    @apply text-4xl lg:text-5xl;
+  }
 
-h5 {
-  @apply text-2xl;
-}
+  h3 {
+    @apply text-3xl lg:text-4xl;
+  }
 
-ul {
-  @apply list-disc pl-2 py-2;
+  h4 {
+    @apply text-3xl;
+  }
 
-  & li {
-    @apply pb-2;
+  h5 {
+    @apply text-2xl;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply font-serif text-xl text-gray-800 dark:text-gray-200  font-normal leading-relaxed mb-8;
+  }
+
+  a {
+    @apply relative text-gray-800 dark:text-gray-200 underline hover:no-underline;
+  }
+
+  ul {
+    @apply list-disc pl-2 py-2;
+
+    & li {
+      @apply pb-2;
+    }
+  }
+
+  ol {
+    @apply list-decimal pl-2 py-2;
+
+    & li {
+      @apply pb-2;
+    }
+  }
+
+  hr {
+    @apply my-8 m-auto;
+  }
+
+  dt {
+    @apply font-bold;
+  }
+
+  form input,
+  form textarea {
+    @apply dark:bg-gray-800;
+  }
+
+  blockquote {
+    @apply mt-2 mb-8 px-4 italic clear-both border-l-4;
+
+    & p {
+      @apply m-0 leading-snug tracking-wide;
+    }
   }
 }
 
-ol {
-  @apply list-decimal pl-2 py-2;
-
-  & li {
-    @apply pb-2;
-  }
+.site-header,
+.site-main,
+.site-footer {
+  @apply container max-w-2xl;
 }
 
-.container {
-  @apply max-w-prose p-4 m-auto;
+.site-header,
+.site-footer {
+  @apply my-8;
+}
+
+.site-branding {
+  @apply;
+}
+
+.post-container,
+.entry-content {
+  @apply space-y-8;
 }
 
 .site-title {
@@ -68,15 +127,36 @@ ol {
 }
 
 .entry-title {
-  @apply text-2xl mb-4;
+  @apply font-black mb-12 leading-tight;
+
+  & a {
+    @apply no-underline;
+  }
 }
 
-.entry-content {
-  @apply mb-8;
+.entry-meta {
+  @apply dark:text-gray-700 mb-4;
 }
 
-p {
-  @apply mb-4;
+.seperator {
+  @apply dark:text-gray-200 space-x-8 text-3xl m-auto text-center;
+}
+
+.nav-links {
+  @apply flex justify-between text-xl mb-8;
+
+  & .nav-next a,
+  & .nav-previous a {
+    @apply rounded bg-gray-200 hover:bg-gray-400 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 px-4 py-2 no-underline;
+  }
+}
+
+.site-info p {
+  @apply text-center font-sans text-lg mb-0;
+}
+
+#disqus_thread {
+  @apply p-4 rounded text-gray-800 dark:bg-gray-700 dark:text-gray-200;
 }
 
 .wp-block-button {
