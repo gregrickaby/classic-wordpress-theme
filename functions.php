@@ -61,6 +61,8 @@ function classic_setup() {
 		]
 	);
 
+	add_theme_support( 'custom-logo' );
+
 	// Add support for extra block styles.
 	add_theme_support( 'wp-block-styles' );
 
@@ -103,7 +105,7 @@ function classic_scripts() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Register styles & scripts.
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Lora:wght@400;700&display=swap', [], $theme_version );
 	wp_enqueue_style( 'classic-style', get_theme_file_uri( '/build/main.css' ), [], $theme_version );
 	wp_enqueue_script( 'classic-scripts', get_theme_file_uri( '/build/main.js' ), [], $theme_version, true );
 

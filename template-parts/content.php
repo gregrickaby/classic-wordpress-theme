@@ -13,16 +13,20 @@
 
 		<header class="entry-header">
 			<?php
-			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-
 			if ( 'post' === get_post_type() ) :
 				?>
-				<div class="entry-meta"></div><!-- .entry-meta -->
-			<?php endif; ?>
+					<div class="entry-meta">
+						<time class="posted-on" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo esc_html( get_the_date( 'l F j, Y @ g:i a' ) ); ?></time>
+					</div><!-- .entry-meta -->
+					<?php
+				endif;
+
+			if ( is_single() ) :
+				the_title( '<h1 class="entry-title">', '</h1>' );
+				else :
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				endif;
+				?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
@@ -49,6 +53,26 @@
 					]
 				);
 				?>
+							<div class="seperator">
+				<span>&middot;</span> <span>&middot;</span> <span>&middot;</span>
+			</div>
 		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<?php
+
+			the_post_navigation(
+				[
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( '❮ Previous Post', 'classic' ) . '</span> ',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next Post ❯', 'classic' ) . '</span>',
+				]
+			);
+
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+						endif;
+			?>
+
+		</footer>
 
 	</article><!-- .post-container -->

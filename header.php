@@ -20,6 +20,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<?php wp_head(); ?>
 
@@ -33,31 +35,36 @@
 
 	<header class="site-header">
 
-		<div class="container">
+		<div class="site-branding">
 
-			<div class="site-branding">
-
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif; ?>
-
-				<?php
-
-				$classic_description = get_bloginfo( 'description', 'display' );
-				if ( $classic_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo esc_html( $classic_description ); ?></p>
-				<?php endif; ?>
-
-			</div><!-- .site-branding -->
-
-			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
-				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'classic' ); ?>"></button>
+			<?php if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php endif; ?>
 
-		</div><!-- .container -->
+			<?php
+
+			$classic_logo_id = get_theme_mod( 'custom_logo' );
+			$classic_logo    = wp_get_attachment_image_src( $classic_logo_id, 'full' );
+
+			if ( has_custom_logo() ) {
+				echo '<img src="' . esc_url( $classic_logo[0] ) . '" alt="' . esc_html( get_bloginfo( 'name' ) ) . '">';
+			} else {
+				echo '<h1>' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
+			}
+
+			$classic_description = get_bloginfo( 'description', 'display' );
+			if ( $classic_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo esc_html( $classic_description ); ?></p>
+			<?php endif; ?>
+
+		</div><!-- .site-branding -->
+
+		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+			<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'classic' ); ?>"></button>
+		<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Main Navigation', 'classic' ); ?>">
 			<?php

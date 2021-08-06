@@ -11,9 +11,10 @@
 
 	<footer class="site-footer">
 
-		<div class="container site-info">
-			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></p>
-		</div><!-- .container .site-info -->
+		<div class="site-info">
+			<p>&copy; 2013-<?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?> </p>
+			<p><a href="https://bluewaterbroadcasting.com/">Bluewater Broadcasting Co., LLC</a></p>
+		</div><!-- .site-info -->
 
 	</footer><!-- .site-footer -->
 
